@@ -47,6 +47,19 @@ public class ControllerPostgreSQL {
         return registerService.getRegistersByFilter(filter);
     }
 
+    @PutMapping("/updateById/{id}")
+    public RegisterDTO updateUserById(@PathVariable Long id, @RequestBody RegisterDTO register) {
+        return registerService.updateRegisterById(id, register);
+    }
+
+    @PutMapping("/updateByPhoneNumb/{phoneNumb}")
+    public RegisterDTO updateUserByPhoneNumber(@PathVariable String phoneNumb, @RequestBody RegisterDTO register) {
+        return registerService.updateRegisterByPhoneNumb(phoneNumb, register);
+    }
+
+
+
+
 
     @PostMapping
     public RegisterDTO addRegister(@RequestBody RegisterDTO register){

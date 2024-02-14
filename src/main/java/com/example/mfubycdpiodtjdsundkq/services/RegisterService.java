@@ -11,8 +11,10 @@ public interface RegisterService {
     void deleteRegisterById(Long id);
     void deleteRegisterByPhoneNumb(String phoneNumb);
     List<RegisterDTO> getRegistersByFilter(Filter filter);
+    RegisterDTO updateRegisterById(Long id, RegisterDTO register);
+    RegisterDTO updateRegisterByPhoneNumb(String phoneNumb, RegisterDTO register);
     RegisterDTO addRegister(RegisterDTO register);
-    RegisterDTO update(RegisterDTO register);
+
 
 
 }

@@ -61,17 +61,8 @@ public class RegisterServiceImpl implements RegisterService {
     }
 
     @Override
-    public RegisterDTO addRegister(RegisterDTO register) {
-        Register registerEntity = registerMapper.toEntity(register);
-        registerEntity.setCreatedDate(new Date());
-            return registerMapper.toDTO(registerRepository.save(registerEntity));
-    }
-
-
-
-    @Override
-    public RegisterDTO update(RegisterDTO register) {
-        Register checkRegister = registerRepository.findById(register.getId()).orElseThrow();
+    public RegisterDTO updateRegisterById(Long id, RegisterDTO register) {
+        Register checkRegister = registerRepository.findById(id).orElse(null);
         if(checkRegister!=null){
             checkRegister.setName(register.getName());
             checkRegister.setDateOfBirth(register.getDateOfBirth());
@@ -82,6 +73,31 @@ public class RegisterServiceImpl implements RegisterService {
         }
         return null;
     }
+
+    @Override
+    public RegisterDTO updateRegisterByPhoneNumb(String phoneNumb, RegisterDTO register) {
+        List<Register> checkRegister = registerRepository.findByNumOfPhoneOrNumOfPhoneSecond(phoneNumb, phoneNumb);
+        if(checkRegister!=null){
+            checkRegister.get(0).setName(register.getName());
+            checkRegister.get(0).setDateOfBirth(register.getDateOfBirth());
+            checkRegister.get(0).setNumOfPhone((register.getNumOfPhone()));
+            checkRegister.get(0).setNumOfPhoneSecond(register.getNumOfPhoneSecond());
+
+            return registerMapper.toDTO(registerRepository.save(checkRegister.get(0)));
+        }
+        return null;
+    }
+
+    @Override
+    public RegisterDTO addRegister(RegisterDTO register) {
+        Register registerEntity = registerMapper.toEntity(register);
+        registerEntity.setCreatedDate(new Date());
+            return registerMapper.toDTO(registerRepository.save(registerEntity));
+    }
+
+
+
+
 
 
 }

@@ -26,10 +26,10 @@ public class Register {
     @Column(name="dateOfBirth")
     private String dateOfBirth;
 
-    @Column(name="numOfPhone")
+    @Column(name="numOfPhone", unique = true)
     private String numOfPhone;
 
-    @Column(name="numOfPhoneSecond")
+    @Column(name="numOfPhoneSecond", unique = true)
     private String numOfPhoneSecond;
 
     @Column(name="createdDate")
