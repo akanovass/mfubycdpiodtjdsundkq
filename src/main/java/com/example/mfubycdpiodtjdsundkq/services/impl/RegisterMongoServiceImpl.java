@@ -1,11 +1,8 @@
 package com.example.mfubycdpiodtjdsundkq.services.impl;
 
-import com.example.mfubycdpiodtjdsundkq.DTO.RegisterDTO;
 import com.example.mfubycdpiodtjdsundkq.DTO.RegisterMongoDTO;
 import com.example.mfubycdpiodtjdsundkq.Repositories.RegisterMongoRepository;
 import com.example.mfubycdpiodtjdsundkq.entity.Filter;
-import com.example.mfubycdpiodtjdsundkq.entity.Register;
-
 import com.example.mfubycdpiodtjdsundkq.entity.RegisterMongo;
 import com.example.mfubycdpiodtjdsundkq.mapper.RegisterMongoMapper;
 import com.example.mfubycdpiodtjdsundkq.services.RegisterMongoService;
@@ -13,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-
 import java.util.Date;
 import java.util.List;
 
@@ -25,11 +21,6 @@ public class RegisterMongoServiceImpl implements RegisterMongoService {
 
     @Autowired
     private RegisterMongoMapper registerMongoMapper;
-
-//    @Override
-//    public List<RegisterDTO> getRegisters() {
-//        return registerMapper.toDTOList(registerRepository.findAll());
-//    }
 
     @Override
     public RegisterMongoDTO getRegisterById(String id) {
@@ -90,12 +81,7 @@ public class RegisterMongoServiceImpl implements RegisterMongoService {
         return null;
     }
 
-    @Override
-    public RegisterMongoDTO addRegister(RegisterMongoDTO register) {
-        RegisterMongo registerEntity = registerMongoMapper.toEntity(register);
-        registerEntity.setCreatedDate(new Date());
-        return registerMongoMapper.toDTO(registerMongoRepository.save(registerEntity));
-    }
+
 
 
 

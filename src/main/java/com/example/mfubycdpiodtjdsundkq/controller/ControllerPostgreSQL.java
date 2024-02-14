@@ -15,11 +15,6 @@ public class ControllerPostgreSQL {
     @Autowired
     private RegisterService registerService;
 
-//    @GetMapping
-//    public List<RegisterDTO> getAllRegister(){
-//        return registerService.getRegisters();
-//
-//    }
 
     @GetMapping("{id}")
     public RegisterDTO getRegisterById( @PathVariable(name = "id") Long id){
@@ -57,13 +52,4 @@ public class ControllerPostgreSQL {
         return registerService.updateRegisterByPhoneNumb(phoneNumb, register);
     }
 
-
-
-
-
-    @PostMapping
-    public RegisterDTO addRegister(@RequestBody RegisterDTO register){
-        return registerService.addRegister(register);
-
-    }
 }

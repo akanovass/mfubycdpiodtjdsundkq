@@ -9,16 +9,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("registerMongo")
 public class ControllerMongoDB {
 
     @Autowired
     RegisterMongoService registerMongoService;
 
-    @PostMapping
-    public RegisterMongoDTO addRegisterMongo(@RequestBody RegisterMongoDTO register){
-        return registerMongoService.addRegister(register);
-
-    }
 
     @GetMapping("{id}")
     public RegisterMongoDTO getRegisterById( @PathVariable(name = "id") String id){

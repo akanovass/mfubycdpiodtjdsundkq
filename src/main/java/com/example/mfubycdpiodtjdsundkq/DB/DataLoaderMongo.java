@@ -1,11 +1,10 @@
 package com.example.mfubycdpiodtjdsundkq.DB;
 
 
-import com.example.mfubycdpiodtjdsundkq.DTO.RegisterMongoDTO;
 import com.example.mfubycdpiodtjdsundkq.Repositories.RegisterMongoRepository;
 import com.example.mfubycdpiodtjdsundkq.entity.RegisterMongo;
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -13,13 +12,13 @@ import java.util.Date;
 import java.util.List;
 
 @Component
-public class DataLoaderMongo implements CommandLineRunner {
+public class DataLoaderMongo {
 
     @Autowired
     private RegisterMongoRepository registerMongoRepository;
 
-    @Override
-    public void run(String... args) throws Exception {
+    @PostConstruct
+    public void initData() {
 
         List<RegisterMongo> list = new ArrayList<>();
         list.add(new RegisterMongo("1","Shyryn","18-10-2002","87073912588","87073912466", new Date()));

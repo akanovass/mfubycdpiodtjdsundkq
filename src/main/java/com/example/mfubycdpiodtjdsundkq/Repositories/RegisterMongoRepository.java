@@ -1,11 +1,9 @@
 package com.example.mfubycdpiodtjdsundkq.Repositories;
 
-import com.example.mfubycdpiodtjdsundkq.entity.Register;
 import com.example.mfubycdpiodtjdsundkq.entity.RegisterMongo;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 
 @Repository

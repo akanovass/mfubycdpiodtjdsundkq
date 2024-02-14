@@ -6,12 +6,10 @@ import com.example.mfubycdpiodtjdsundkq.entity.Filter;
 import com.example.mfubycdpiodtjdsundkq.entity.Register;
 import com.example.mfubycdpiodtjdsundkq.mapper.RegisterMapper;
 import com.example.mfubycdpiodtjdsundkq.services.RegisterService;
-import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-
 import java.util.Date;
 import java.util.List;
 
@@ -23,11 +21,6 @@ public class RegisterServiceImpl implements RegisterService {
 
     @Autowired
     private RegisterMapper registerMapper;
-
-//    @Override
-//    public List<RegisterDTO> getRegisters() {
-//        return registerMapper.toDTOList(registerRepository.findAll());
-//    }
 
     @Override
     public RegisterDTO getRegisterById(Long id) {
@@ -88,14 +81,12 @@ public class RegisterServiceImpl implements RegisterService {
         return null;
     }
 
-    @Override
-    public RegisterDTO addRegister(RegisterDTO register) {
-        Register registerEntity = registerMapper.toEntity(register);
-        registerEntity.setCreatedDate(new Date());
-            return registerMapper.toDTO(registerRepository.save(registerEntity));
-    }
-
-
+//    @Override
+//    public RegisterDTO addRegister(RegisterDTO register) {
+//        Register registerEntity = registerMapper.toEntity(register);
+//        registerEntity.setCreatedDate(new Date());
+//            return registerMapper.toDTO(registerRepository.save(registerEntity));
+//    }
 
 
 

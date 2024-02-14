@@ -1,0 +1,371 @@
+{
+	"info": {
+		"_postman_id": "af8c4cd6-e321-4819-9e25-62d0730d58ce",
+		"name": "mfubycdpiodtjdsundkq",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25720894"
+	},
+	"item": [
+		{
+			"name": "get all by filter",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"offset\": \"1\",\r\n    \"limit\": \"5\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8800/register/filter",
+					"host": [
+						"localhost"
+					],
+					"port": "8800",
+					"path": [
+						"register",
+						"filter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8800/register/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8800",
+					"path": [
+						"register",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by phoneNumb",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "phoneNumb",
+							"value": "87073912588",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8800/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8800",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8800/register/8",
+					"host": [
+						"localhost"
+					],
+					"port": "8800",
+					"path": [
+						"register",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete by phoneNumb",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "phoneNumb",
+							"value": "87073912588",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8800/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8800",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"name\": \"Асет\",\r\n    \"dateOfBirth\": \"2000-04-21\",\r\n    \"numOfPhone\": \"870655555\",\r\n    \"numOfPhoneSecond\": \"844444444\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8800/register/updateById/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8800",
+					"path": [
+						"register",
+						"updateById",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update by phoneNumb",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"name\": \"Bereke\",\r\n    \"dateOfBirth\": \"2020-04-21\",\r\n    \"numOfPhone\": \"8706555533335\",\r\n    \"numOfPhoneSecond\": \"89888888\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8800/register/updateByPhoneNumb/844444444",
+					"host": [
+						"localhost"
+					],
+					"port": "8800",
+					"path": [
+						"register",
+						"updateByPhoneNumb",
+						"844444444"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all by filter (MongoDB)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"offset\": \"1\",\r\n    \"limit\": \"5\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8800/registerMongo/filter",
+					"host": [
+						"localhost"
+					],
+					"port": "8800",
+					"path": [
+						"registerMongo",
+						"filter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by id (MongoDB)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8800/registerMongo/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8800",
+					"path": [
+						"registerMongo",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by phoneNumb (MongoDB)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8800/registerMongo?phoneNumb=87073912588",
+					"host": [
+						"localhost"
+					],
+					"port": "8800",
+					"path": [
+						"registerMongo"
+					],
+					"query": [
+						{
+							"key": "phoneNumb",
+							"value": "87073912588"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete by id (MongoDB)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8800/registerMongo/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8800",
+					"path": [
+						"registerMongo",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete by phoneNumb (MongoDB)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8800/registerMongo?phoneNumb=87071211905",
+					"host": [
+						"localhost"
+					],
+					"port": "8800",
+					"path": [
+						"registerMongo"
+					],
+					"query": [
+						{
+							"key": "phoneNumb",
+							"value": "87071211905"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update by id (MongoDB)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"name\": \"Asyl\",\r\n    \"dateOfBirth\": \"2000-04-21\",\r\n    \"numOfPhone\": \"870655555\",\r\n    \"numOfPhoneSecond\": \"844444444\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8800/registerMongo/updateById/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8800",
+					"path": [
+						"registerMongo",
+						"updateById",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update by phoneNumb (MongoDB)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"name\": \"Aigan\",\r\n    \"dateOfBirth\": \"2002-04-21\",\r\n    \"numOfPhone\": \"8706555533335\",\r\n    \"numOfPhoneSecond\": \"89888888\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8800/register/updateByPhoneNumb/87075612699",
+					"host": [
+						"localhost"
+					],
+					"port": "8800",
+					"path": [
+						"register",
+						"updateByPhoneNumb",
+						"87075612699"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

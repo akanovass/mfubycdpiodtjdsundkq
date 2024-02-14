@@ -1,12 +1,8 @@
 package com.example.mfubycdpiodtjdsundkq.entity;
 
-
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.Date;
-
-
-
 
 @Entity
 @Table(name="t_register")

@@ -15,6 +15,4 @@ public interface RegisterMongoService {
     RegisterMongoDTO updateRegisterById(String id, RegisterMongoDTO register);
     RegisterMongoDTO updateRegisterByPhoneNumb(String phoneNumb, RegisterMongoDTO register);
 
-    RegisterMongoDTO addRegister(RegisterMongoDTO register);
-
 }

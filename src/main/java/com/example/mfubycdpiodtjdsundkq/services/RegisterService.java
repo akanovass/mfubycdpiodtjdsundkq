@@ -14,8 +14,6 @@ public interface RegisterService {
     RegisterDTO updateRegisterById(Long id, RegisterDTO register);
     RegisterDTO updateRegisterByPhoneNumb(String phoneNumb, RegisterDTO register);
 
-    RegisterDTO addRegister(RegisterDTO register);
-
-
+//    RegisterDTO addRegister(RegisterDTO register);
 
 }
