@@ -35,11 +35,6 @@ public class Register {
     @Column(name="createdDate")
     private Date createdDate;
 
-//    @PrePersist
-//    protected void onCreate() {
-//        createdDate = new Date();
-//    }
-
 
 
 }
