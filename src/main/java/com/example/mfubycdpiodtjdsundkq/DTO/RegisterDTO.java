@@ -15,7 +15,6 @@ public class RegisterDTO {
     private Long id;
     private String name;
     private String dateOfBirth;
-    private int numOfPhone;
-    private int numOfPhoneSecond;
-    private Date createdDate;
+    private String numOfPhone;
+    private String numOfPhoneSecond;
 }

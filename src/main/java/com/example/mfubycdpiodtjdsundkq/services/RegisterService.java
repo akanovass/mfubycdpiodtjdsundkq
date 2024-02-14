@@ -6,7 +6,9 @@ import java.util.List;
 
 public interface RegisterService {
     List<RegisterDTO> getRegisters();
-    RegisterDTO getRegister(Long id);
+    RegisterDTO getRegisterById(Long id);
+    RegisterDTO getRegisterByPhoneNumb(String phoneNumb);
+
     RegisterDTO addRegister(RegisterDTO register);
     RegisterDTO update(RegisterDTO register);
     void deleteRegister(Long id);

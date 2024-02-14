@@ -27,18 +27,18 @@ public class Register {
     private String dateOfBirth;
 
     @Column(name="numOfPhone")
-    private int numOfPhone;
+    private String numOfPhone;
 
     @Column(name="numOfPhoneSecond")
-    private int numOfPhoneSecond;
+    private String numOfPhoneSecond;
 
     @Column(name="createdDate")
     private Date createdDate;
 
-    @PrePersist
-    protected void onCreate() {
-        createdDate = new Date();
-    }
+//    @PrePersist
+//    protected void onCreate() {
+//        createdDate = new Date();
+//    }
 
 
 
