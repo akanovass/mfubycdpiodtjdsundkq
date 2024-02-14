@@ -1,13 +1,15 @@
 package com.example.mfubycdpiodtjdsundkq.entity;
 
-import lombok.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+import lombok.*;
 import java.util.Date;
 
 
+
+
 @Entity
-@Table(name="Register")
+@Table(name="t_register")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -30,7 +32,7 @@ public class Register {
     @Column(name="numOfPhoneSecond")
     private int numOfPhoneSecond;
 
-    @Column(name="numOfPhoneSecond")
+    @Column(name="createdDate")
     private Date createdDate;
 
     @PrePersist
