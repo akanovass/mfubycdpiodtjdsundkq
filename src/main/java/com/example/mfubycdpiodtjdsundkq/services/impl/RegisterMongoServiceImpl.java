@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-import java.util.Date;
+
 import java.util.List;
 
 @Service
@@ -24,7 +24,11 @@ public class RegisterMongoServiceImpl implements RegisterMongoService {
 
     @Override
     public RegisterMongoDTO getRegisterById(String id) {
-        return registerMongoMapper.toDTO(registerMongoRepository.findById(id).orElse(null));
+        RegisterMongo register = registerMongoRepository.findById(id).orElse(null);
+        if (register != null) {
+            return registerMongoMapper.toDTO(register);
+        }
+        return null;
     }
 
     @Override
@@ -56,7 +60,7 @@ public class RegisterMongoServiceImpl implements RegisterMongoService {
     @Override
     public RegisterMongoDTO updateRegisterById(String id, RegisterMongoDTO register) {
         RegisterMongo checkRegister = registerMongoRepository.findById(id).orElse(null);
-        if(checkRegister!=null){
+        if (checkRegister != null) {
             checkRegister.setName(register.getName());
             checkRegister.setDateOfBirth(register.getDateOfBirth());
             checkRegister.setNumOfPhone((register.getNumOfPhone()));
@@ -70,7 +74,7 @@ public class RegisterMongoServiceImpl implements RegisterMongoService {
     @Override
     public RegisterMongoDTO updateRegisterByPhoneNumb(String phoneNumb, RegisterMongoDTO register) {
         List<RegisterMongo> checkRegister = registerMongoRepository.findByNumOfPhoneOrNumOfPhoneSecond(phoneNumb, phoneNumb);
-        if(checkRegister!=null){
+        if (checkRegister != null) {
             checkRegister.get(0).setName(register.getName());
             checkRegister.get(0).setDateOfBirth(register.getDateOfBirth());
             checkRegister.get(0).setNumOfPhone((register.getNumOfPhone()));
@@ -80,9 +84,6 @@ public class RegisterMongoServiceImpl implements RegisterMongoService {
         }
         return null;
     }
-
-
-
 
 
 }

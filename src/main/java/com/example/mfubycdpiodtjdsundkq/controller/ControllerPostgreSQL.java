@@ -17,7 +17,7 @@ public class ControllerPostgreSQL {
 
 
     @GetMapping("{id}")
-    public RegisterDTO getRegisterById( @PathVariable(name = "id") Long id){
+    public RegisterDTO getRegisterById(@PathVariable(name = "id") Long id) {
         return registerService.getRegisterById(id);
 
     }
@@ -29,12 +29,12 @@ public class ControllerPostgreSQL {
 
     @DeleteMapping("{id}")
     public void deleteRegisterById(@PathVariable(name = "id") Long id) {
-         registerService.deleteRegisterById(id);
+        registerService.deleteRegisterById(id);
     }
 
     @DeleteMapping
     public void deleteRegisterByPhoneNumb(@RequestParam String phoneNumb) {
-         registerService.deleteRegisterByPhoneNumb(phoneNumb);
+        registerService.deleteRegisterByPhoneNumb(phoneNumb);
     }
 
     @GetMapping("/filter")

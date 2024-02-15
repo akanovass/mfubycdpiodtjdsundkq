@@ -2,10 +2,11 @@ package com.example.mfubycdpiodtjdsundkq.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+
 import java.util.Date;
 
 @Entity
-@Table(name="t_register")
+@Table(name = "t_register")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -13,24 +14,23 @@ import java.util.Date;
 public class Register {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name = "id")
     private Long id;
 
-    @Column(name="name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name="dateOfBirth")
+    @Column(name = "dateOfBirth")
     private String dateOfBirth;
 
-    @Column(name="numOfPhone", unique = true)
+    @Column(name = "numOfPhone", unique = true)
     private String numOfPhone;
 
-    @Column(name="numOfPhoneSecond", unique = true)
+    @Column(name = "numOfPhoneSecond", unique = true)
     private String numOfPhoneSecond;
 
-    @Column(name="createdDate")
+    @Column(name = "createdDate")
     private Date createdDate;
-
 
 
 }

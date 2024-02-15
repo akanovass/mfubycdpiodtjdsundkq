@@ -6,12 +6,14 @@ import org.mapstruct.Mapper;
 
 import java.util.List;
 
-@Mapper( componentModel = "spring")
+@Mapper(componentModel = "spring")
 public interface RegisterMapper {
     RegisterDTO toDTO(Register register);
+
     Register toEntity(RegisterDTO registerDTO);
 
     List<RegisterDTO> toDTOList(List<Register> registers);
+
     List<Register> toEntityList(List<RegisterDTO> registersDTO);
 
 }

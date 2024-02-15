@@ -17,7 +17,7 @@ public class ControllerMongoDB {
 
 
     @GetMapping("{id}")
-    public RegisterMongoDTO getRegisterById( @PathVariable(name = "id") String id){
+    public RegisterMongoDTO getRegisterById(@PathVariable(name = "id") String id) {
         return registerMongoService.getRegisterById(id);
 
     }
@@ -51,7 +51,4 @@ public class ControllerMongoDB {
     public RegisterMongoDTO updateUserByPhoneNumber(@PathVariable String phoneNumb, @RequestBody RegisterMongoDTO register) {
         return registerMongoService.updateRegisterByPhoneNumb(phoneNumb, register);
     }
-
-
-
 }

@@ -7,13 +7,17 @@ import java.util.List;
 
 public interface RegisterService {
     RegisterDTO getRegisterById(Long id);
-    RegisterDTO getRegisterByPhoneNumb(String phoneNumb);
-    void deleteRegisterById(Long id);
-    void deleteRegisterByPhoneNumb(String phoneNumb);
-    List<RegisterDTO> getRegistersByFilter(Filter filter);
-    RegisterDTO updateRegisterById(Long id, RegisterDTO register);
-    RegisterDTO updateRegisterByPhoneNumb(String phoneNumb, RegisterDTO register);
 
-//    RegisterDTO addRegister(RegisterDTO register);
+    RegisterDTO getRegisterByPhoneNumb(String phoneNumb);
+
+    void deleteRegisterById(Long id);
+
+    void deleteRegisterByPhoneNumb(String phoneNumb);
+
+    List<RegisterDTO> getRegistersByFilter(Filter filter);
+
+    RegisterDTO updateRegisterById(Long id, RegisterDTO register);
+
+    RegisterDTO updateRegisterByPhoneNumb(String phoneNumb, RegisterDTO register);
 
 }

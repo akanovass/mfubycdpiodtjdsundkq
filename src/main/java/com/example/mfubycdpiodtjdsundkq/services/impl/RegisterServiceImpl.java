@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-import java.util.Date;
+
 import java.util.List;
 
 @Service
@@ -24,7 +24,11 @@ public class RegisterServiceImpl implements RegisterService {
 
     @Override
     public RegisterDTO getRegisterById(Long id) {
-        return registerMapper.toDTO(registerRepository.findById(id).orElse(null));
+        Register register = registerRepository.findById(id).orElse(null);
+        if (register != null) {
+            return registerMapper.toDTO(register);
+        }
+        return null;
     }
 
     @Override
@@ -56,7 +60,7 @@ public class RegisterServiceImpl implements RegisterService {
     @Override
     public RegisterDTO updateRegisterById(Long id, RegisterDTO register) {
         Register checkRegister = registerRepository.findById(id).orElse(null);
-        if(checkRegister!=null){
+        if (checkRegister != null) {
             checkRegister.setName(register.getName());
             checkRegister.setDateOfBirth(register.getDateOfBirth());
             checkRegister.setNumOfPhone((register.getNumOfPhone()));
@@ -70,7 +74,7 @@ public class RegisterServiceImpl implements RegisterService {
     @Override
     public RegisterDTO updateRegisterByPhoneNumb(String phoneNumb, RegisterDTO register) {
         List<Register> checkRegister = registerRepository.findByNumOfPhoneOrNumOfPhoneSecond(phoneNumb, phoneNumb);
-        if(checkRegister!=null){
+        if (checkRegister != null) {
             checkRegister.get(0).setName(register.getName());
             checkRegister.get(0).setDateOfBirth(register.getDateOfBirth());
             checkRegister.get(0).setNumOfPhone((register.getNumOfPhone()));
@@ -80,15 +84,5 @@ public class RegisterServiceImpl implements RegisterService {
         }
         return null;
     }
-
-//    @Override
-//    public RegisterDTO addRegister(RegisterDTO register) {
-//        Register registerEntity = registerMapper.toEntity(register);
-//        registerEntity.setCreatedDate(new Date());
-//            return registerMapper.toDTO(registerRepository.save(registerEntity));
-//    }
-
-
-
 
 }
